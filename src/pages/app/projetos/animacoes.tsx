@@ -133,7 +133,7 @@ export function Animacoes() {
                           controls
                           autoPlay
                           loop
-                          className="mb-10 h-[80vh] w-full border border-zinc-800 shadow-inner shadow-black hover:border-[#e9b874]"
+                          className="mb-10 max-h-[80vh] w-full border border-zinc-800 shadow-inner shadow-black hover:border-[#e9b874]"
                         >
                           Seu navegador não suporta a tag de vídeo.
                         </video>

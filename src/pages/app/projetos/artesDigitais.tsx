@@ -1,7 +1,7 @@
-import { X } from 'lucide-react'
-import { useState } from 'react'
-import { FaGithub } from 'react-icons/fa'
-import { TbNavigationShare } from 'react-icons/tb'
+import { X } from "lucide-react";
+import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
+import { TbNavigationShare } from "react-icons/tb";
 
 import {
   AlertDialog,
@@ -12,41 +12,43 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/components/ui/alert-dialog'
-import { Label } from '@/components/ui/label'
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import { artesDigitais } from '@/constants/index'
-import { useMainHeight } from '@/hooks/useMainHeight'
-import { usePlayAudioOnHover } from '@/hooks/usePlayAudioOnHover'
-import { usePlayAudioOnClick } from '@/hooks/usePlayAudioOnClick'
-import hoverSound from '@/assets/audio/Audio-collection.wav'
-import openSound from '@/assets/audio/Audio-open-collection.wav'
-import closeSound from '@/assets/audio/Audio-close-collection.wav'
+} from "@/components/ui/alert-dialog";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { artesDigitais } from "@/constants/index";
+import { useMainHeight } from "@/hooks/useMainHeight";
+import { usePlayAudioOnHover } from "@/hooks/usePlayAudioOnHover";
+import { usePlayAudioOnClick } from "@/hooks/usePlayAudioOnClick";
+import hoverSound from "@/assets/audio/Audio-collection.wav";
+import openSound from "@/assets/audio/Audio-open-collection.wav";
+import closeSound from "@/assets/audio/Audio-close-collection.wav";
 
 export function ArtesDigitais() {
-  const mainHeight = useMainHeight(180)
+  const mainHeight = useMainHeight(180);
 
-  const playHoverSound = usePlayAudioOnHover(hoverSound)
-  const playOpenSound = usePlayAudioOnClick(openSound)
-  const playCloseSound = usePlayAudioOnClick(closeSound)
+  const playHoverSound = usePlayAudioOnHover(hoverSound);
+  const playOpenSound = usePlayAudioOnClick(openSound);
+  const playCloseSound = usePlayAudioOnClick(closeSound);
 
-  const [filteredProjects, setFilteredProjects] = useState(
-    () => artesDigitais.filter((art) => art.status.includes('todos')),
-  )
+  const [filteredProjects, setFilteredProjects] = useState(() =>
+    artesDigitais.filter((art) => art.status.includes("todos")),
+  );
 
   function handleChangeState(
-    status: 'todos' | 'desenvolvimento' | 'finalizado',
+    status: "todos" | "desenvolvimento" | "finalizado",
   ) {
-    const filtered = artesDigitais.filter((cert) => cert.status.includes(status))
-    setFilteredProjects(filtered)
+    const filtered = artesDigitais.filter((cert) =>
+      cert.status.includes(status),
+    );
+    setFilteredProjects(filtered);
   }
 
-  function handleOpenSound(){
-    playOpenSound()
+  function handleOpenSound() {
+    playOpenSound();
   }
 
-  function handleCloseSound(){
-    playCloseSound()
+  function handleCloseSound() {
+    playCloseSound();
   }
 
   return (
@@ -60,7 +62,7 @@ export function ArtesDigitais() {
           onValueChange={handleChangeState}
           className="flex flex-col items-start gap-0"
         >
-          <div className="ml-2 pl-1 flex w-[95%] items-center gap-4 hover:bg-[#e8edf928]">
+          <div className="ml-2 flex w-[95%] items-center gap-4 pl-1 hover:bg-[#e8edf928]">
             <RadioGroupItem
               value="todos"
               id="r1"
@@ -126,11 +128,11 @@ export function ArtesDigitais() {
                       {project.title}
                     </AlertDialogTitle>
                     <AlertDialogDescription>
-                      <div>
+                      <div className="">
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="mb-10 w-full h-[80vh]"
+                          className="mb-10 max-h-[80vh] w-full"
                         />
                       </div>
                     </AlertDialogDescription>
@@ -160,7 +162,10 @@ export function ArtesDigitais() {
                       )} */}
                     </div>
                   </AlertDialogFooter>
-                  <AlertDialogCancel className="absolute right-2 top-2 h-8 rounded-sm bg-aside-bg p-0 opacity-80 hover:bg-aside-bg text-client-TextSecondary hover:text-client-TextSecondary hover:opacity-100 border-none" onClick={handleCloseSound}>
+                  <AlertDialogCancel
+                    className="absolute right-2 top-2 h-8 rounded-sm border-none bg-aside-bg p-0 text-client-TextSecondary opacity-80 hover:bg-aside-bg hover:text-client-TextSecondary hover:opacity-100"
+                    onClick={handleCloseSound}
+                  >
                     <X size={30} className="p-1" />
                   </AlertDialogCancel>
                 </AlertDialogContent>
@@ -170,5 +175,5 @@ export function ArtesDigitais() {
         </ul>
       </div>
     </main>
-  )
+  );
 }

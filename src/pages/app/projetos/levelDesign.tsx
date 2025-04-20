@@ -128,12 +128,12 @@ export function LevelDesign() {
                       {project.title}
                     </AlertDialogTitle>
                     <AlertDialogDescription>
-                      <div className="mb-10 h-[80vh] w-full">
+                      <div className="mb-10 max-h-[80vh] w-full">
                         {project.design.endsWith(".pdf") ? (
                           <iframe
                             src={project.design}
                             title={project.title}
-                            className="h-full w-full"
+                            className="h-[80vh] w-full"
                           />
                         ) : (
                           <img
