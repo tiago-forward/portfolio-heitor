@@ -1,7 +1,7 @@
 import { X } from "lucide-react";
 import { useState } from "react";
-import { FaGithub } from "react-icons/fa";
-import { TbNavigationShare } from "react-icons/tb";
+// import { FaGithub } from "react-icons/fa";
+// import { TbNavigationShare } from "react-icons/tb";
 
 import {
   AlertDialog,
@@ -10,7 +10,6 @@ import {
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
-  AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Label } from "@/components/ui/label";

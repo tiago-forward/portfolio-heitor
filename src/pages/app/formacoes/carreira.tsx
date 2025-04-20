@@ -33,7 +33,7 @@ export function Carreira() {
     CertificatesProps[]
   >(() => certificates.filter((cert) => cert.status.includes("concluidos")));
 
-  function handleChangeState(status: "concluidos" | "destaques") {
+  function handleChangeState(status: "concluidos") {
     const filtered = certificates.filter((cert) =>
       cert.status.includes(status),
     );

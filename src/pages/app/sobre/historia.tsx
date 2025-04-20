@@ -1,26 +1,22 @@
-import { CodeXml, Github, Instagram, Linkedin, MoveUpRight } from 'lucide-react'
+import { CodeXml, Instagram, Linkedin } from 'lucide-react'
 
 import HeitorProfile from '@/assets/heitor.jpg'
 
-import Tiago1 from '@/assets/imageProfile/Tiago 1.jpg'
-import Tiago2 from '@/assets/imageProfile/Tiago 2.jpg'
-import Tiago3 from '@/assets/imageProfile/Tiago 3.jpg'
 import { useMainHeight } from '@/hooks/useMainHeight'
-import { ImageProfile } from './components/imageProfile'
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 
 export function Historia() {
   const mainHeight = useMainHeight(180)
-  const [isLoadingImage, setIsLoadingImage] = useState(false)
+  // const [isLoadingImage, setIsLoadingImage] = useState(false)
 
-  useEffect(() => {
-    const loadData = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 2000))
-      setIsLoadingImage(true)
-    }
+  // useEffect(() => {
+  //   const loadData = async () => {
+  //     await new Promise((resolve) => setTimeout(resolve, 2000))
+  //     setIsLoadingImage(true)
+  //   }
 
-    loadData()
-  }, [])
+  //   loadData()
+  // }, [])
 
   return (
     <>
