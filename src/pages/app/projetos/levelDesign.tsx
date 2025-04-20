@@ -1,7 +1,7 @@
-import { X } from 'lucide-react'
-import { useState } from 'react'
-import { FaGithub } from 'react-icons/fa'
-import { TbNavigationShare } from 'react-icons/tb'
+import { X } from "lucide-react";
+import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
+import { TbNavigationShare } from "react-icons/tb";
 
 import {
   AlertDialog,
@@ -12,41 +12,39 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/components/ui/alert-dialog'
-import { Label } from '@/components/ui/label'
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import { levelDesign } from '@/constants/index'
-import { useMainHeight } from '@/hooks/useMainHeight'
-import { usePlayAudioOnHover } from '@/hooks/usePlayAudioOnHover'
-import { usePlayAudioOnClick } from '@/hooks/usePlayAudioOnClick'
-import hoverSound from '@/assets/audio/Audio-collection.wav'
-import openSound from '@/assets/audio/Audio-open-collection.wav'
-import closeSound from '@/assets/audio/Audio-close-collection.wav'
+} from "@/components/ui/alert-dialog";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { levelDesign } from "@/constants/index";
+import { useMainHeight } from "@/hooks/useMainHeight";
+import { usePlayAudioOnHover } from "@/hooks/usePlayAudioOnHover";
+import { usePlayAudioOnClick } from "@/hooks/usePlayAudioOnClick";
+import hoverSound from "@/assets/audio/Audio-collection.wav";
+import openSound from "@/assets/audio/Audio-open-collection.wav";
+import closeSound from "@/assets/audio/Audio-close-collection.wav";
 
 export function LevelDesign() {
-  const mainHeight = useMainHeight(180)
+  const mainHeight = useMainHeight(180);
 
-  const playHoverSound = usePlayAudioOnHover(hoverSound)
-  const playOpenSound = usePlayAudioOnClick(openSound)
-  const playCloseSound = usePlayAudioOnClick(closeSound)
+  const playHoverSound = usePlayAudioOnHover(hoverSound);
+  const playOpenSound = usePlayAudioOnClick(openSound);
+  const playCloseSound = usePlayAudioOnClick(closeSound);
 
-  const [filteredProjects, setFilteredProjects] = useState(
-    () => levelDesign.filter((art) => art.status.includes('todos')),
-  )
+  const [filteredProjects, setFilteredProjects] = useState(() =>
+    levelDesign.filter((art) => art.status.includes("todos")),
+  );
 
-  function handleChangeState(
-    status: 'todos' | 'desenvolvimento' | 'finalizado',
-  ) {
-    const filtered = levelDesign.filter((cert) => cert.status.includes(status))
-    setFilteredProjects(filtered)
+  function handleChangeState(status: "todos" | "pdf") {
+    const filtered = levelDesign.filter((cert) => cert.status.includes(status));
+    setFilteredProjects(filtered);
   }
 
-  function handleOpenSound(){
-    playOpenSound()
+  function handleOpenSound() {
+    playOpenSound();
   }
 
-  function handleCloseSound(){
-    playCloseSound()
+  function handleCloseSound() {
+    playCloseSound();
   }
 
   return (
@@ -60,7 +58,7 @@ export function LevelDesign() {
           onValueChange={handleChangeState}
           className="flex flex-col items-start gap-0"
         >
-          <div className="ml-2 pl-1 flex w-[95%] items-center gap-4 hover:bg-[#e8edf928]">
+          <div className="ml-2 flex w-[95%] items-center gap-4 pl-1 hover:bg-[#e8edf928]">
             <RadioGroupItem
               value="todos"
               id="r1"
@@ -73,9 +71,9 @@ export function LevelDesign() {
               Todos
             </Label>
           </div>
-          <div className="ml-2 pl-1 flex w-[95%] items-center gap-4 hover:bg-[#e8edf928]">
+          <div className="ml-2 flex w-[95%] items-center gap-4 pl-1 hover:bg-[#e8edf928]">
             <RadioGroupItem
-              value="desenvolvimento"
+              value="pdf"
               id="r2"
               className="rotate-45 rounded-none border border-[#e9b874] bg-aside-bg text-client-InputRadio"
             />
@@ -114,7 +112,11 @@ export function LevelDesign() {
                 <AlertDialogTrigger asChild>
                   <div className="border border-[#e9b874] border-opacity-30 shadow-inner shadow-black hover:border-[#e9b874] hover:border-opacity-100">
                     <img
-                      src={project.design}
+                      src={
+                        project.design.endsWith(".pdf")
+                          ? project.imagem
+                          : project.design
+                      }
                       alt={project.title}
                       className="w-80 border border-zinc-800 shadow-inner shadow-black hover:border-[#e9b874]"
                     />
@@ -126,12 +128,20 @@ export function LevelDesign() {
                       {project.title}
                     </AlertDialogTitle>
                     <AlertDialogDescription>
-                      <div>
-                        <img
-                          src={project.design}
-                          alt={project.title}
-                          className="mb-10 w-full h-[80vh]"
-                        />
+                      <div className="mb-10 h-[80vh] w-full">
+                        {project.design.endsWith(".pdf") ? (
+                          <iframe
+                            src={project.design}
+                            title={project.title}
+                            className="h-full w-full"
+                          />
+                        ) : (
+                          <img
+                            src={project.design}
+                            alt={project.title}
+                            className="h-full w-full"
+                          />
+                        )}
                       </div>
                     </AlertDialogDescription>
                   </AlertDialogHeader>
@@ -160,7 +170,10 @@ export function LevelDesign() {
                       )} */}
                     </div>
                   </AlertDialogFooter>
-                  <AlertDialogCancel className="absolute right-2 top-2 h-8 rounded-sm bg-aside-bg p-0 opacity-80 hover:bg-aside-bg text-client-TextSecondary hover:text-client-TextSecondary hover:opacity-100 border-none" onClick={handleCloseSound}>
+                  <AlertDialogCancel
+                    className="absolute right-2 top-2 h-8 rounded-sm border-none bg-aside-bg p-0 text-client-TextSecondary opacity-80 hover:bg-aside-bg hover:text-client-TextSecondary hover:opacity-100"
+                    onClick={handleCloseSound}
+                  >
                     <X size={30} className="p-1" />
                   </AlertDialogCancel>
                 </AlertDialogContent>
@@ -170,5 +183,5 @@ export function LevelDesign() {
         </ul>
       </div>
     </main>
-  )
+  );
 }

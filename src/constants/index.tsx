@@ -643,6 +643,7 @@ export const animacoes = [
 ];
 
 import Pdf1 from "@/assets/Level_Design/Level Heitor Inacabado.pdf";
+import ImagePdf1 from "@/assets/Level_Design/Level Heitor Inacabado.png";
 
 import Design1 from "@/assets/Level_Design/Prancheta 1.png";
 import Design2 from "@/assets/Level_Design/mapa mund.png";
@@ -658,6 +659,7 @@ export const levelDesign = [
     id: uuidv4(),
     title: "Prancheta 1",
     design: Pdf1,
+    imagem: ImagePdf1,
     status: ["pdf"],
     link: "",
   },
