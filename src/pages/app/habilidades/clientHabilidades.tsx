@@ -1,24 +1,24 @@
-import { Helmet } from 'react-helmet-async'
-import { Outlet } from 'react-router-dom'
+import { Helmet } from "react-helmet-async";
+import { Outlet } from "react-router-dom";
 
 import {
   HeaderMainNav,
   HeaderMainNavItem,
   HeaderMainRoot,
-} from '@/components/header/headerMainRoot'
-import { useEffect, useState } from 'react'
+} from "@/components/header/headerMainRoot";
+import { useEffect, useState } from "react";
 
 export function ClientHabilidades() {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      setIsLoading(false)
-    }
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      setIsLoading(false);
+    };
 
-    loadData()
-  }, [])
+    loadData();
+  }, []);
 
   return (
     <>
@@ -26,19 +26,25 @@ export function ClientHabilidades() {
       <section className="flex h-full w-full flex-col justify-between">
         <HeaderMainRoot>
           <HeaderMainNav>
-            <HeaderMainNavItem to={'/habilidades/hard-skills'} title="Hard Skills">
+            <HeaderMainNavItem
+              to={"/habilidades/hard-skills"}
+              title="Hard Skills"
+            >
               Hard Skills
             </HeaderMainNavItem>
-            <HeaderMainNavItem to={'/habilidades/soft-skills'} title="Soft Skills">
+            {/* <HeaderMainNavItem to={'/habilidades/soft-skills'} title="Soft Skills">
               Soft Skills
-            </HeaderMainNavItem>
+            </HeaderMainNavItem> */}
           </HeaderMainNav>
         </HeaderMainRoot>
         {isLoading ? (
-          <div role="status" className="flex justify-center items-center h-full">
+          <div
+            role="status"
+            className="flex h-full items-center justify-center"
+          >
             <svg
               aria-hidden="true"
-              className="w-14 h-14 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+              className="h-14 w-14 animate-spin fill-blue-600 text-gray-200 dark:text-gray-600"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -59,5 +65,5 @@ export function ClientHabilidades() {
         )}
       </section>
     </>
-  )
+  );
 }

@@ -37,7 +37,7 @@ export function Animacoes() {
   function handleChangeState(
     status: "todos" | "desenvolvimento" | "finalizado",
   ) {
-    const filtered = projects.filter((cert) => cert.status.includes(status));
+    const filtered = animacoes.filter((cert) => cert.status.includes(status));
     setFilteredProjects(filtered);
   }
 
@@ -128,15 +128,15 @@ export function Animacoes() {
                     </AlertDialogTitle> */}
                     <AlertDialogDescription>
                       <div>
-                      <video
-                        src={project.video}
-                        controls
-                        autoPlay
-                        loop                      
-                        className="w-full h-[80vh] border border-zinc-800 shadow-inner shadow-black hover:border-[#e9b874]"
-                      >
-                        Seu navegador não suporta a tag de vídeo.
-                      </video>
+                        <video
+                          src={project.video}
+                          controls
+                          autoPlay
+                          loop
+                          className="mb-10 h-[80vh] w-full border border-zinc-800 shadow-inner shadow-black hover:border-[#e9b874]"
+                        >
+                          Seu navegador não suporta a tag de vídeo.
+                        </video>
                       </div>
                     </AlertDialogDescription>
                   </AlertDialogHeader>

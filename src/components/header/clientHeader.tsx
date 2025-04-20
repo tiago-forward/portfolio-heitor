@@ -1,20 +1,20 @@
-import { Separator } from '@radix-ui/react-separator'
-import React from 'react'
+import { Separator } from "@radix-ui/react-separator";
+import React from "react";
 
-import Logo from '@/assets/logo.png'
-import HeitorProfile from '@/assets/heitor.jpg'
+import Logo from "@/assets/logo.png";
+import HeitorProfile from "@/assets/heitor.jpg";
 
-import { NavLinkHeader } from '../navLinks/navLinkHeader'
+import { NavLinkHeader } from "../navLinks/navLinkHeader";
 
 export function ClientHeader() {
-  const primaryNavItems = [{ id: 1, href: '/', title: 'Início' }]
+  const primaryNavItems = [{ id: 1, href: "/", title: "Início" }];
 
   const secondaryNavItems = [
-    { id: 1, href: '/sobre', title: 'Sobre' },
-    { id: 2, href: '/habilidades', title: 'Habilidades' },
-    { id: 3, href: '/formacoes', title: 'Formações' },
-    { id: 4, href: '/projetos', title: 'Projetos' },
-  ]
+    { id: 1, href: "/sobre", title: "Sobre" },
+    // { id: 2, href: '/habilidades', title: 'Habilidades' },
+    // { id: 3, href: '/formacoes', title: 'Formações' },
+    { id: 4, href: "/projetos", title: "Projetos" },
+  ];
 
   return (
     <header className="border-t-2 border-border-header">
@@ -22,11 +22,7 @@ export function ClientHeader() {
         <ul className="mt-8 flex flex-col items-center uppercase lg:col-span-2 lg:mt-0 lg:flex-row lg:pl-8">
           <li className="space-x-4">
             <a href="/">
-              <img
-                src={Logo}
-                alt="Logo Heitor"
-                className="w-[88px]"
-              />
+              <img src={Logo} alt="Logo Heitor" className="w-[88px]" />
             </a>
           </li>
           {primaryNavItems.map((item) => (
@@ -34,7 +30,9 @@ export function ClientHeader() {
               key={item.id}
               className="relative hidden h-full items-center md:flex"
             >
-              <NavLinkHeader to={item.href} exact>{item.title}</NavLinkHeader>
+              <NavLinkHeader to={item.href} exact>
+                {item.title}
+              </NavLinkHeader>
             </li>
           ))}
         </ul>
@@ -68,7 +66,7 @@ export function ClientHeader() {
                 className="absolute cursor-default rounded-[6px] border-2 border-[#e9b874] bg-[#2f3640] px-2 text-xs font-bold text-client-TextLevel"
                 title="Idade"
               >
-                26
+                30
               </span>
             </div>
           </div>
@@ -81,11 +79,13 @@ export function ClientHeader() {
             </span>
             <div className="flex items-center gap-2">
               <div className="bola bg-green-500"></div>
-              <span className="mt-1 cursor-default text-client-TextStatusOnline">Online</span>
+              <span className="mt-1 cursor-default text-client-TextStatusOnline">
+                Online
+              </span>
             </div>
           </div>
         </div>
       </nav>
     </header>
-  )
+  );
 }
