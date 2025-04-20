@@ -1,9 +1,9 @@
-import { ComponentProps, ReactNode } from 'react'
+import { ComponentProps, ReactNode } from "react";
 
-import { NavLinkMain } from '@/components/navLinks/navLinkMain'
+import { NavLinkMain } from "@/components/navLinks/navLinkMain";
 
-interface HeaderMainRootProps extends ComponentProps<'header'> {
-  children: ReactNode
+interface HeaderMainRootProps extends ComponentProps<"header"> {
+  children: ReactNode;
 }
 
 export function HeaderMainRoot({ children, ...props }: HeaderMainRootProps) {
@@ -11,24 +11,24 @@ export function HeaderMainRoot({ children, ...props }: HeaderMainRootProps) {
     <>
       <header {...props}>{children}</header>
     </>
-  )
+  );
 }
 
-interface HeaderMainNavProps extends ComponentProps<'nav'> {
-  children: ReactNode
+interface HeaderMainNavProps extends ComponentProps<"nav"> {
+  children: ReactNode;
 }
 
 export function HeaderMainNav({ children, ...props }: HeaderMainNavProps) {
   return (
     <nav {...props}>
-      <ul className="mb-8 flex gap-4 pt-2 uppercase">{children}</ul>
+      <ul className="mb-8 flex flex-wrap gap-4 pt-2 uppercase">{children}</ul>
     </nav>
-  )
+  );
 }
 
-interface HeaderMainNavItemProps extends ComponentProps<'li'> {
-  to: string
-  children: ReactNode
+interface HeaderMainNavItemProps extends ComponentProps<"li"> {
+  to: string;
+  children: ReactNode;
 }
 
 export function HeaderMainNavItem({
@@ -40,5 +40,5 @@ export function HeaderMainNavItem({
     <li {...props}>
       <NavLinkMain to={to}>{children}</NavLinkMain>
     </li>
-  )
+  );
 }
