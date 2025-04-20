@@ -12,7 +12,7 @@ export function ClientHeader() {
   const secondaryNavItems = [
     { id: 1, href: "/sobre", title: "Sobre" },
     // { id: 2, href: '/habilidades', title: 'Habilidades' },
-    // { id: 3, href: '/formacoes', title: 'Formações' },
+    { id: 3, href: '/formacoes', title: 'Formações' },
     { id: 4, href: "/projetos", title: "Projetos" },
   ];
 

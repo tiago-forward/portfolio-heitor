@@ -88,22 +88,7 @@ export const hardSkills: hardSkillsProps[] = [
   },
 ];
 
-import ImageCertificate1 from "@/assets/certificate/Algoritmo 40 Horas.jpg";
-import ImageCertificate13 from "@/assets/certificate/Aprofundando em Hooks.jpg";
-import ImageCertificate9 from "@/assets/certificate/Clean Code.jpg";
-import ImageCertificate3 from "@/assets/certificate/Desenvolvimento Frontend com Angular.jpg";
-import ImageCertificate6 from "@/assets/certificate/Frontend.jpg";
-import ImageCertificate15 from "@/assets/certificate/Fundamentos do Next.js.jpg";
-import ImageCertificate8 from "@/assets/certificate/Fundamentos do React.jpg";
-import ImageCertificate12 from "@/assets/certificate/HTTP e Performance.jpg";
-import ImageCertificate14 from "@/assets/certificate/Integrando Frontend e Backend.jpg";
-import ImageCertificate11 from "@/assets/certificate/Masterizando o Tailwind.jpg";
-import ImageCertificate7 from "@/assets/certificate/Minicurso de UXUI Design.jpg";
-import ImageCertificate5 from "@/assets/certificate/NLW Unite Reactjs.jpg";
-import ImageCertificate4 from "@/assets/certificate/Semana do Python na Prática.jpg";
-import ImageCertificate10 from "@/assets/certificate/SEO para Devs.jpg";
-import ImageCertificate2 from "@/assets/certificate/Simplifica Excell Express.jpg";
-import ImageCertificate16 from "@/assets/certificate/Análise e Desenvolvimento de Sistemas.png";
+import ImageCertificate1 from "@/assets/certificate/NASA Space Apps Challenge.jpg";
 
 export interface CertificatesProps {
   id: string;
@@ -117,131 +102,11 @@ export interface CertificatesProps {
 export const certificates: CertificatesProps[] = [
   {
     id: uuidv4(),
-    title: "Análise e Desenvolvimento de Sistemas",
-    image: ImageCertificate16,
-    status: ["concluidos"],
-    link: "https://graduacao.uninassau.digital/?utm_source=google&utm_medium=search&utm_campaign=um_uninassau_graduacao_ead-vestibular_20251-conversao-google-campanha-regular-uta000924&utm_content=um_uninassau-graduacao-ead-conversao-google-TARG-todasaspracas-branding&gad_source=1&gclid=CjwKCAiAmfq6BhAsEiwAX1jsZ5j_jTOrimVyei9Ywxwf5F5zMKtY3_A33DvNVIoIZVlq3EHBOYUgYRoCWlUQAvD_BwE",
-    foundation: "UNINASSAU",
-  },
-  {
-    id: uuidv4(),
-    title: "Fundamentos do Next.js",
-    image: ImageCertificate15,
-    status: ["concluidos"],
-    link: "https://www.rocketseat.com.br/",
-    foundation: "Formação Rocketseat",
-  },
-  {
-    id: uuidv4(),
-    title: "Integrando Frontend e Backend",
-    image: ImageCertificate14,
-    status: ["concluidos"],
-    link: "https://www.rocketseat.com.br/",
-    foundation: "Formação Rocketseat",
-  },
-  {
-    id: uuidv4(),
-    title: "Aprofundando em Hooks",
-    image: ImageCertificate13,
-    status: ["concluidos"],
-    link: "https://www.rocketseat.com.br/",
-    foundation: "Formação Rocketseat",
-  },
-  {
-    id: uuidv4(),
-    title: "HTTP e Perfomance",
-    image: ImageCertificate12,
-    status: ["concluidos"],
-    link: "https://www.rocketseat.com.br/",
-    foundation: "Formação Rocketseat",
-  },
-  {
-    id: uuidv4(),
-    title: "Masterizando o Tailwind",
-    image: ImageCertificate11,
-    status: ["concluidos"],
-    link: "https://www.rocketseat.com.br/",
-    foundation: "Formação Rocketseat",
-  },
-  {
-    id: uuidv4(),
-    title: "SEO para Devs",
-    image: ImageCertificate10,
-    status: ["concluidos"],
-    link: "https://www.rocketseat.com.br/",
-    foundation: "Formação Rocketseat",
-  },
-  {
-    id: uuidv4(),
-    title: "Clean Code",
-    image: ImageCertificate9,
-    status: ["concluidos"],
-    link: "https://www.rocketseat.com.br/",
-    foundation: "Formação Rocketseat",
-  },
-  {
-    id: uuidv4(),
-    title: "Fundamentos do React",
-    image: ImageCertificate8,
-    status: ["concluidos"],
-    link: "https://www.rocketseat.com.br/",
-    foundation: "Formação Rocketseat",
-  },
-  {
-    id: uuidv4(),
-    title: "Minicurso de UXUI Design",
-    image: ImageCertificate7,
-    status: ["concluidos"],
-    link: "https://cubos.academy/",
-    foundation: "Formação Cubos Academy",
-  },
-  {
-    id: uuidv4(),
-    title: "Frontend",
-    image: ImageCertificate6,
-    status: ["concluidos"],
-    link: "https://devemdobro.com/matriculas-abertas-bf/",
-    foundation: "Formação DevQuest - Dev em Dobro",
-  },
-  {
-    id: uuidv4(),
-    title: "NLW Unite Reactjs",
-    image: ImageCertificate5,
-    status: ["concluidos"],
-    link: "https://www.rocketseat.com.br/",
-    foundation: "Formação Rocketseat",
-  },
-  {
-    id: uuidv4(),
-    title: "Semana do Python na Prática",
-    image: ImageCertificate4,
-    status: ["concluidos"],
-    link: "https://www.empowerdata.com.br/",
-    foundation: "Formação Empowerdata",
-  },
-  {
-    id: uuidv4(),
-    title: "Desenvolvimento Frontend com Angular",
-    image: ImageCertificate3,
-    status: ["concluidos"],
-    link: "https://www.dio.me/",
-    foundation: "Formação DIO",
-  },
-  {
-    id: uuidv4(),
-    title: "Simplifica Excel Express",
-    image: ImageCertificate2,
-    status: ["concluidos"],
-    link: "https://simplificatreinamentos.com.br/power-excel-08/?utm_source=Gads&utm_medium=[CAPTA%C3%87%C3%83O]_[PESQUISA]&utm_campaign=POWER_EXCEL_T03&utm_content=[AD02]_[PESQUISA]&gad_source=1&gclid=CjwKCAiA0rW6BhAcEiwAQH28IqjxEaKNHbooP7PL33EVUXC2jJ-avVM8UG_bI9BOPQAzLMm2AKBdRBoC1K0QAvD_BwE",
-    foundation: "Formação SIMPLIFICA TREINAMENTOS",
-  },
-  {
-    id: uuidv4(),
-    title: "Algoritmo 40 Horas",
+    title: "NASA Space Apps Challenge",
     image: ImageCertificate1,
     status: ["concluidos"],
-    link: "https://www.cursoemvideo.com/",
-    foundation: "Formação Curso em Video",
+    link: "https://www.spaceappschallenge.org/",
+    foundation: "NASA",
   },
 ];
 
