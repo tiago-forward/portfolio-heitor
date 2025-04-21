@@ -1,7 +1,5 @@
 import { X } from "lucide-react";
 import { useState } from "react";
-// import { FaGithub } from "react-icons/fa";
-// import { TbNavigationShare } from "react-icons/tb";
 
 import {
   AlertDialog,
@@ -113,6 +111,7 @@ export function Animacoes() {
                 <AlertDialogTrigger asChild>
                   <div className="border border-[#e9b874] border-opacity-30 shadow-inner shadow-black hover:border-[#e9b874] hover:border-opacity-100">
                     <video
+                      autoPlay
                       src={project.video}
                       className="w-80 border border-zinc-800 shadow-inner shadow-black hover:border-[#e9b874]"
                     >
