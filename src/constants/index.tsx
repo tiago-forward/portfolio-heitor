@@ -637,3 +637,48 @@ export const modelagens = [
     link: "",
   },
 ];
+
+import Doc1 from "@/assets/Documentação/GDD Heitor(Layka Jouney).pdf";
+import Doc2 from "@/assets/Documentação/Laika jouney slide.pdf";
+import Doc3 from "@/assets/Documentação/No Man's Heaven.pdf";
+import Doc4 from "@/assets/Documentação/cnh gamificada.pdf";
+
+import DocImage1 from "@/assets/Documentação/GDD Heitor(Layka Jouney).png";
+import DocImage2 from "@/assets/Documentação/Laika jouney slide.png";
+import DocImage3 from "@/assets/Documentação/No Man's Heaven.png";
+import DocImage4 from "@/assets/Documentação/cnh gamificada.png";
+
+export const documentacao = [
+  {
+    id: uuidv4(),
+    title: "GDD Heitor(Layka Jouney)",
+    design: Doc1,
+    imagem: DocImage1,
+    status: ["todos"],
+    link: "",
+  },
+  {
+    id: uuidv4(),
+    title: "Laika jouney slide",
+    design: Doc2,
+    imagem: DocImage2,
+    status: ["todos"],
+    link: "",
+  },
+  {
+    id: uuidv4(),
+    title: "No Man's Heaven",
+    design: Doc3,
+    imagem: DocImage3,
+    status: ["todos"],
+    link: "",
+  },
+  {
+    id: uuidv4(),
+    title: "cnh gamificada",
+    design: Doc4,
+    imagem: DocImage4,
+    status: ["todos"],
+    link: "",
+  },
+];

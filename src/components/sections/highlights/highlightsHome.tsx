@@ -1,7 +1,4 @@
-import { SquareArrowOutUpRight } from 'lucide-react'
-
-import Setup from '@/assets/imageProfile/Setup.jpg'
-import MyLegendPortfolio from '@/assets/imageProject/My Legends Portfolio.jpg'
+import { SquareArrowOutUpRight } from "lucide-react";
 
 export default function HighlightsHome() {
   return (
@@ -10,26 +7,28 @@ export default function HighlightsHome() {
         <ul className="mt-10 flex flex-col items-center gap-3 md:mt-4 md:flex-row md:items-start">
           <li className="group relative w-full sm:w-80">
             <a
-              href="https://github.com/tiago-forward"
+              href="https://github.com/HeitorSantos420"
               target="_blank"
               className="flex flex-col gap-2"
               rel="noreferrer"
             >
               <div className="border border-black">
                 <img
-                  src={Setup}
+                  src=""
                   alt=""
                   className="h-52 w-full border-2 border-zinc-700 group-hover:border-[#a18052] sm:h-44 sm:w-80"
                 />
               </div>
-              <h2 className="font-bold text-client-TextPrimary text-stroke group-hover:text-client-TextPrimaryHover">Meu setup</h2>
+              <h2 className="text-stroke text-2xl font-bold text-client-TextPrimary group-hover:text-client-TextPrimaryHover">
+                Veja meus jogos
+              </h2>
               <SquareArrowOutUpRight
                 size={16}
                 className="absolute right-1 top-1 text-client-AnchorIcon group-hover:text-client-AnchorIconHover"
               />
             </a>
           </li>
-          <li className="group relative w-full sm:w-80">
+          {/* <li className="group relative w-full sm:w-80">
             <a
               href="https://github.com/tiago-forward/my-legend-portfolio"
               target="_blank"
@@ -52,9 +51,9 @@ export default function HighlightsHome() {
                 className="absolute right-1 top-1 text-client-AnchorIcon group-hover:text-client-AnchorIconHover"
               />
             </a>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </section>
-  )
+  );
 }

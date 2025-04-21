@@ -41,6 +41,9 @@ export function ClientProjetos() {
             <HeaderMainNavItem to={"/projetos/level-design"}>
               Level Design
             </HeaderMainNavItem>
+            <HeaderMainNavItem to={"/projetos/documentacao"}>
+              Documentação
+            </HeaderMainNavItem>
           </HeaderMainNav>
         </HeaderMainRoot>
         {isLoading ? (

@@ -17,6 +17,7 @@ import { Animacoes } from "./pages/app/projetos/animacoes";
 import { ArtesDigitais } from "./pages/app/projetos/artesDigitais";
 import { Cenarios } from "./pages/app/projetos/cenarios";
 import { Modelagens } from "./pages/app/projetos/modelagens";
+import { Documentacao } from "./pages/app/projetos/documentacao";
 
 export const router = createBrowserRouter([
   {
@@ -64,6 +65,7 @@ export const router = createBrowserRouter([
               { path: "modelagens", element: <Modelagens /> },
               { path: "artes-digitais", element: <ArtesDigitais /> },
               { path: "level-design", element: <LevelDesign /> },
+              { path: "documentacao", element: <Documentacao /> },
             ],
           },
         ],
